@@ -3,6 +3,7 @@ package com.example.demo.security;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -19,6 +20,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public WebSecurityConfig(UserDetailsServiceImpl userDetailsService, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userDetailsService = userDetailsService;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+    }
+
+    @Override
+    public void configure(WebSecurity web) {
+        // Allow swagger to be accessed without authentication
+        web.ignoring().antMatchers("/v2/api-docs")//
+                .antMatchers("/swagger-resources/**")//
+                .antMatchers("/swagger-ui.html")//
+                .antMatchers("/configuration/**")//
+                .antMatchers("/webjars/**")//
+                .antMatchers("/public");
     }
 
     @Override
