@@ -30,7 +30,7 @@ public class Cart {
 	@JsonProperty
 	private BigDecimal total;
 	
-	BigDecimal getTotal() {
+	public BigDecimal getTotal() {
 		return total;
 	}
 
@@ -54,7 +54,7 @@ public class Cart {
 		this.id = id;
 	}
 
-	List<Item> getItems() {
+	public List<Item> getItems() {
 		return items;
 	}
 
