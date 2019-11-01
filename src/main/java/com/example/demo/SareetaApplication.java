@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.model.persistence.Cart;
 import com.example.demo.model.persistence.User;
 import com.example.demo.model.persistence.repositories.UserRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -28,6 +29,7 @@ public class SareetaApplication {
 			User user = new User();
 			user.setUsername(ADMIN);
 			user.setPassword(bCryptPasswordEncoder().encode(PASSWORD));
+			user.setCart(new Cart());
 			userRepository.save(user);
 		};
 	}
