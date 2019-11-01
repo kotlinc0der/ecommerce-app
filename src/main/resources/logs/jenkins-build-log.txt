@@ -1,0 +1,142 @@
+Started by user Haidar Youness
+Running as SYSTEM
+Building in workspace D:\Dev Tools\jenkins\workspace\eCommerce Application Build
+using credential 868cb780-07f5-4e3e-8a70-2d50da38bf3d
+ > git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/hyouness/ecommerce-app # timeout=10
+Fetching upstream changes from https://github.com/hyouness/ecommerce-app
+ > git.exe --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git.exe fetch --tags --progress https://github.com/hyouness/ecommerce-app +refs/heads/*:refs/remotes/origin/*
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision c99314d975f8407e413ee5b756c5e026f0d50ab2 (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f c99314d975f8407e413ee5b756c5e026f0d50ab2
+Commit message: "feat: Index logs to splunk"
+ > git.exe rev-list --no-walk c99314d975f8407e413ee5b756c5e026f0d50ab2 # timeout=10
+[eCommerce Application Build] $ cmd.exe /C "mvn package && exit %%ERRORLEVEL%%"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.example:ecommerce-app >----------------------
+[INFO] Building eCommerce-app 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ ecommerce-app ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ ecommerce-app ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ ecommerce-app ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory D:\Dev Tools\jenkins\workspace\eCommerce Application Build\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ ecommerce-app ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ ecommerce-app ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.example.demo.controllers.CartControllerTest
+18:08:02,390 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+18:08:02,390 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+18:08:02,391 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/D:/Dev%20Tools/jenkins/workspace/eCommerce%20Application%20Build/target/classes/logback.xml]
+18:08:02,446 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+18:08:02,446 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [com.splunk.logging.TcpAppender]
+18:08:02,450 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [socket]
+18:08:02,561 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [com.example.demo.controllers] to INFO
+18:08:02,561 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting additivity of logger [com.example.demo.controllers] to false
+18:08:02,562 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [socket] to Logger[com.example.demo.controllers]
+18:08:02,563 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+18:08:02,564 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
+18:08:02,568 |-INFO in com.splunk.logging.TcpAppender[socket] - 127.0.0.1:15000 connection established
+18:08:02,576 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - This appender no longer admits a layout as a sub-component, set an encoder instead.
+18:08:02,576 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - To ensure compatibility, wrapping your layout in LayoutWrappingEncoder.
+18:08:02,576 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also http://logback.qos.ch/codes.html#layoutInsteadOfEncoder for details
+18:08:02,576 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
+18:08:02,576 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[ROOT]
+18:08:02,576 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+18:08:02,577 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@3b0ca5e1 - Registering current configuration as safe fallback point
+
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.623 s - in com.example.demo.controllers.CartControllerTest
+[INFO] Running com.example.demo.controllers.ItemControllerTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.example.demo.controllers.ItemControllerTest
+[INFO] Running com.example.demo.controllers.OrderControllerTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in com.example.demo.controllers.OrderControllerTest
+[INFO] Running com.example.demo.controllers.UserControllerTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in com.example.demo.controllers.UserControllerTest
+[INFO] Running com.example.demo.SareetaApplicationTests
+2019-11-01 18:08:02 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.demo.SareetaApplicationTests], using SpringBootContextLoader
+2019-11-01 18:08:02 [main] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.example.demo.SareetaApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-11-01 18:08:02 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.SareetaApplicationTests]: SareetaApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-11-01 18:08:02 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.SareetaApplication for test class com.example.demo.SareetaApplicationTests
+2019-11-01 18:08:02 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener]
+2019-11-01 18:08:02 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@55e2fe3c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@45e1aa48, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@12c60152, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2e807c54, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6cd164a6, org.springframework.test.context.transaction.TransactionalTestExecutionListener@242a209e, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@64469d8, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@2b8bd798, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@4c18621b, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@39c385d6, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1cec219f, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@692e028d, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6629ad09, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@43e1692f]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.7.RELEASE)
+
+2019-11-01 18:08:03 [main] INFO  c.e.demo.SareetaApplicationTests - Starting SareetaApplicationTests on DESKTOP-HQEJ1B2 with PID 16124 (started by DESKTOP-HQEJ1B2$ in D:\Dev Tools\jenkins\workspace\eCommerce Application Build)
+2019-11-01 18:08:03 [main] INFO  c.e.demo.SareetaApplicationTests - No active profile set, falling back to default profiles: default
+2019-11-01 18:08:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-01 18:08:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37ms. Found 4 repository interfaces.
+2019-11-01 18:08:04 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2f2ddcbb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-01 18:08:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-11-01 18:08:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-11-01 18:08:04 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-11-01 18:08:04 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.10.Final}
+2019-11-01 18:08:04 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2019-11-01 18:08:04 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-11-01 18:08:04 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-11-01 18:08:05 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-11-01 18:08:05 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-11-01 18:08:06 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-11-01 18:08:06 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/v2/api-docs'], []
+2019-11-01 18:08:06 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/swagger-resources/**'], []
+2019-11-01 18:08:06 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/swagger-ui.html'], []
+2019-11-01 18:08:06 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/configuration/**'], []
+2019-11-01 18:08:06 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-11-01 18:08:06 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/public'], []
+2019-11-01 18:08:06 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22025464, org.springframework.security.web.context.SecurityContextPersistenceFilter@6f254d79, org.springframework.security.web.header.HeaderWriterFilter@270a3cef, org.springframework.web.filter.CorsFilter@77eb0e47, org.springframework.security.web.authentication.logout.LogoutFilter@7786c2e0, com.example.demo.security.JWTAuthenticationFilter@3a034950, com.example.demo.security.JWTAuthorizationFilter@331eb953, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6888a33, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6a94bd69, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@38f7a20, org.springframework.security.web.session.SessionManagementFilter@6f7e5e11, org.springframework.security.web.access.ExceptionTranslationFilter@3f69b166, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6d0cc47d]
+2019-11-01 18:08:06 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-01 18:08:06 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2019-11-01 18:08:06 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-11-01 18:08:06 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2019-11-01 18:08:06 [main] INFO  c.e.demo.SareetaApplicationTests - Started SareetaApplicationTests in 4.137 seconds (JVM running for 5.266)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.447 s - in com.example.demo.SareetaApplicationTests
+2019-11-01 18:08:07 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-01 18:08:07 [Thread-3] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-11-01 18:08:07 [Thread-3] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+2019-11-01 18:08:07 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-11-01 18:08:07 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- maven-jar-plugin:3.1.1:jar (default-jar) @ ecommerce-app ---
+[INFO] Building jar: D:\Dev Tools\jenkins\workspace\eCommerce Application Build\target\ecommerce-app-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.1.7.RELEASE:repackage (repackage) @ ecommerce-app ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.110 s
+[INFO] Finished at: 2019-11-01T18:08:08+02:00
+[INFO] ------------------------------------------------------------------------
+Finished: SUCCESS
